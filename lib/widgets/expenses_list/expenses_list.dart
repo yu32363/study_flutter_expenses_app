@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter_expenses_app/main.dart';
 import 'package:study_flutter_expenses_app/models/expense.dart';
 import 'package:study_flutter_expenses_app/widgets/expenses_list/expense_item.dart';
 
@@ -21,6 +22,11 @@ class ExpensesList extends StatelessWidget {
         final expense = expenses[index];
         return Dismissible(
           key: ValueKey(expense),
+          background: Container(
+            color: Theme.of(context).colorScheme.error.withOpacity(0.50),
+            margin: EdgeInsets.symmetric(
+                horizontal: Theme.of(context).cardTheme.margin!.horizontal),
+          ),
           onDismissed: (direction) => onRemoveExpense(expense),
           child: ExpenseItem(expense: expense),
         );
