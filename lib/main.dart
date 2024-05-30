@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
 
 import 'package:study_flutter_expenses_app/widgets/expenses.dart';
 
@@ -7,6 +8,10 @@ var kColorScheme = ColorScheme.fromSeed(seedColor: Colors.white70);
 var kDarkColorScheme = ColorScheme.fromSeed(
     brightness: Brightness.dark, seedColor: Colors.white70);
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]).then((fn) {
   runApp(
     MaterialApp(
       darkTheme: ThemeData.dark().copyWith(
@@ -47,4 +52,5 @@ void main() {
       home: const Expenses(),
     ),
   );
+  // }); //Not Lock Oreiantation
 }
